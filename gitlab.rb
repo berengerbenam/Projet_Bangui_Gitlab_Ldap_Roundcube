@@ -87,13 +87,14 @@ registry_external_url 'http://gitlab1.rtn.sn:5050'
 ###! Docs: https://docs.gitlab.com/omnibus/settings/smtp.html
 ###! **Use smtp instead of sendmail/postfix.**
 
+
 gitlab_rails['smtp_enable'] = true
 gitlab_rails['smtp_address'] = "localhost"
 gitlab_rails['smtp_port'] = 25
-gitlab_rails['smtp_user_name'] = "devops1"
+gitlab_rails['smtp_user_name'] = "admin"
 gitlab_rails['smtp_password'] = "passer"
 gitlab_rails['smtp_domain'] = "rtn.sn"
-#gitlab_rails['smtp_authentication'] = "login"
+gitlab_rails['smtp_authentication'] = "login"
 gitlab_rails['smtp_enable_starttls_auto'] = false
 gitlab_rails['smtp_tls'] = false
 gitlab_rails['smtp_pool'] = true
@@ -113,10 +114,10 @@ gitlab_rails['gitlab_email_enabled'] = true
 
 ##! If your SMTP server does not like the default 'From: gitlab@gitlab.example.com'
 ##! can change the 'From' with this setting.
-gitlab_rails['gitlab_email_from'] = 'devops1@rtn.sn'
-gitlab_rails['gitlab_email_display_name'] = 'devops1'
+gitlab_rails['gitlab_email_from'] = 'admin@rtn.sn'
+gitlab_rails['gitlab_email_display_name'] = 'admin'
 gitlab_rails['gitlab_email_reply_to'] = 'noreply@rtn.sn'
-gitlab_rails['gitlab_email_subject_suffix'] = ''
+gitlab_rails['gitlab_email_subject_suffix'] = 'email'
 gitlab_rails['gitlab_email_smime_enabled'] = false
 # gitlab_rails['gitlab_email_smime_key_file'] = '/etc/gitlab/ssl/gitlab_smime.key'
 # gitlab_rails['gitlab_email_smime_cert_file'] = '/etc/gitlab/ssl/gitlab_smime.crt'
@@ -263,13 +264,13 @@ gitlab_rails['incoming_email_enabled'] = true
 ####! to reference the item being replied to.
 ####! **The placeholder can be omitted but if present, it must appear in the
 ####!   "user" part of the address (before the `@`).**
-gitlab_rails['incoming_email_address'] = "devops1+%{key}@rtn.sn"
+gitlab_rails['incoming_email_address'] = "admin+%{key}@rtn.sn"
 
 #### Email account username
 ####! **With third party providers, this is usually the full email address.**
 ####! **With self-hosted email servers, this is usually the user part of the
 ####!   email address.**
-gitlab_rails['incoming_email_email'] = "devops1"
+gitlab_rails['incoming_email_email'] = "admin"
 
 #### Email account password
 gitlab_rails['incoming_email_password'] = "passer"
